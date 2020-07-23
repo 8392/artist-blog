@@ -1,7 +1,5 @@
 const Koa = require('koa')
-const Router = require('koa-router')
 const app = new Koa()
-const router = new Router()
 
 const views = require('koa-views')
 const co = require('co')
@@ -10,11 +8,13 @@ const json = require('koa-json')
 const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
+const koajwt = require("koa-jwt")
 const debug = require('debug')('koa2:server')
 const path = require('path')
 
 const config = require('./config')
-const routes = require('./routes')
+const index = require('./routes/index')
+const users = require('./routes/users')
 
 const port = process.env.PORT || config.port
 
@@ -22,17 +22,17 @@ const port = process.env.PORT || config.port
 onerror(app)
 
 // middlewares
+
+app.use(koajwt({ secret: 'ArtistXB' }).unless({
+    // 登录接口不需要验证
+    path: [/^\/login/]
+}));
+
+
 app.use(bodyparser())
     .use(json())
     .use(logger())
     .use(require('koa-static')(__dirname + '/public'))
-    .use(views(path.join(__dirname, '/views'), {
-        options: { settings: { views: path.join(__dirname, 'views') } },
-        map: { 'njk': 'nunjucks' },
-        extension: 'njk'
-    }))
-    .use(router.routes())
-    .use(router.allowedMethods())
 
 // logger
 app.use(async (ctx, next) => {
@@ -42,20 +42,16 @@ app.use(async (ctx, next) => {
     console.log(`${ctx.method} ${ctx.url} - $ms`)
 })
 
-router.get('/', async (ctx, next) => {
-    // ctx.body = 'Hello World'
-    ctx.state = {
-        title: 'Koa2'
-    }
-    await ctx.render('index', ctx.state)
-})
 
-routes(router)
+app.use(index.routes(), index.allowedMethods())
+app.use(users.routes(), users.allowedMethods())
+
+
 app.on('error', function (err, ctx) {
-    console.log(err)
+    console.log('err', err)
     logger.error('server error', err, ctx)
 })
 
 module.exports = app.listen(config.port, () => {
-    console.log(`Listening on http://localhost:${config.port}`)
+    // console.log(`服务启动成功`)
 })
