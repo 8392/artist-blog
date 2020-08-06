@@ -1,7 +1,7 @@
 
 const Sequelize = require("sequelize");
 
-const database = 'artist-blog'
+const database = 'artist_blog'
 const user = 'root'
 const password = '123456'
 const conf = {
