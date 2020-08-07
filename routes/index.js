@@ -1,11 +1,18 @@
 const router = require("koa-router")();
-
-router.get("/city", async (ctx) => {
-    const data = {
-        id: 1,
-        city: "北京"
+const koaForm = require('formidable-upload-koa')
+const { saveFile } = require("../controller/index")
+router.post("/upload", koaForm(), async (ctx) => {
+    const file = ctx.req.files['file']
+    if (!file) {
+        return
     }
-    ctx.body = data;
+    const { size, path, name, type } = file
+    ctx.body = await saveFile({
+        name,
+        type,
+        size,
+        filePath: path
+    })
 })
 
 module.exports = router;

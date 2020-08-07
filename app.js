@@ -11,7 +11,10 @@ const logger = require('koa-logger')
 const koajwt = require("koa-jwt")
 const debug = require('debug')('koa2:server')
 const path = require('path')
+const koaStatic = require('koa-static')
+const koaSwagger = require("koa2-swagger-ui")
 
+// const swagger = require("./utils/swagger")
 const config = require('./config')
 const index = require('./routes/index')
 const users = require('./routes/users')
@@ -20,7 +23,6 @@ const port = process.env.PORT || config.port
 
 // error handler
 onerror(app)
-
 // middlewares
 
 // app.use(koajwt({ secret: 'ArtistXB' }).unless({
@@ -28,11 +30,33 @@ onerror(app)
 //     path: [/^\/login/]
 // }));
 
+// app.use(koaSwagger({
+//     routePrefix: '/swagger', // host at /swagger instead of default /docs
+//     swaggerOptions: {
+//         url: '/swagger.json', // example path to json 其实就是之后swagger-jsdoc生成的文档地址
+//     },
+// }))
+
+
+const app = new Koa();
+
+app.use(
+    koaSwagger({
+        routePrefix: '/swagger', // host at /swagger instead of default /docs
+        swaggerOptions: {
+            url: 'http://petstore.swagger.io/v2/swagger.json', // example path to json
+        },
+    }),
+);
+
+
 
 app.use(bodyparser())
     .use(json())
     .use(logger())
     .use(require('koa-static')(__dirname + '/public'))
+
+app.use(koaStatic(path.join(__dirname, 'uploadFiles')))
 
 // logger
 app.use(async (ctx, next) => {
@@ -42,7 +66,7 @@ app.use(async (ctx, next) => {
     console.log(`${ctx.method} ${ctx.url} - $ms`)
 })
 
-
+// app.use(swagger.routes(), swagger.allowedMethods())
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
 
