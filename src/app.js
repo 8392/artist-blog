@@ -13,7 +13,7 @@ const path = require('path')
 const koaStatic = require('koa-static')
 const koaSwagger = require("koa2-swagger-ui")
 
-const swagger = require("../swagger")
+const swagger = require("../swagger/swagger")
 const config = require('./config')
 const index = require('./routes/index')
 const users = require('./routes/users')
@@ -24,6 +24,7 @@ const port = process.env.PORT || config.port
 onerror(app)
 // middlewares
 
+// JWT登录token验证
 // app.use(koajwt({ secret: 'ArtistXB' }).unless({
 //     // 登录接口不需要验证
 //     path: [/^\/login/]
