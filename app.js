@@ -23,10 +23,10 @@ onerror(app)
 
 // middlewares
 
-app.use(koajwt({ secret: 'ArtistXB' }).unless({
-    // 登录接口不需要验证
-    path: [/^\/login/]
-}));
+// app.use(koajwt({ secret: 'ArtistXB' }).unless({
+//     // 登录接口不需要验证
+//     path: [/^\/login/]
+// }));
 
 
 app.use(bodyparser())
