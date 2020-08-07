@@ -47,5 +47,3 @@ router.patch("/user", async (ctx) => { // 注册
 
 
 module.exports = router;
-
-// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7fSwiaWF0IjoxNTk1NDc5MjE3LCJleHAiOjE1OTU0ODI4MTd9.mV8HUoPoik42IqjWjtZv1F6WTXUe9RsGbAdjwNKaP2I

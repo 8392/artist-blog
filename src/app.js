@@ -1,6 +1,5 @@
 const Koa = require('koa')
-const app = new Koa()
-
+const app = new Koa();
 const views = require('koa-views')
 const co = require('co')
 const convert = require('koa-convert')
@@ -14,7 +13,7 @@ const path = require('path')
 const koaStatic = require('koa-static')
 const koaSwagger = require("koa2-swagger-ui")
 
-// const swagger = require("./utils/swagger")
+const swagger = require("../swagger")
 const config = require('./config')
 const index = require('./routes/index')
 const users = require('./routes/users')
@@ -30,25 +29,12 @@ onerror(app)
 //     path: [/^\/login/]
 // }));
 
-// app.use(koaSwagger({
-//     routePrefix: '/swagger', // host at /swagger instead of default /docs
-//     swaggerOptions: {
-//         url: '/swagger.json', // example path to json 其实就是之后swagger-jsdoc生成的文档地址
-//     },
-// }))
-
-
-const app = new Koa();
-
-app.use(
-    koaSwagger({
-        routePrefix: '/swagger', // host at /swagger instead of default /docs
-        swaggerOptions: {
-            url: 'http://petstore.swagger.io/v2/swagger.json', // example path to json
-        },
-    }),
-);
-
+app.use(koaSwagger({
+    routePrefix: '/swagger', // host at /swagger instead of default /docs
+    swaggerOptions: {
+        url: '/swagger.json', // example path to json 其实就是之后swagger-jsdoc生成的文档地址
+    },
+}))
 
 
 app.use(bodyparser())
@@ -56,7 +42,8 @@ app.use(bodyparser())
     .use(logger())
     .use(require('koa-static')(__dirname + '/public'))
 
-app.use(koaStatic(path.join(__dirname, 'uploadFiles')))
+app.use(koaStatic(path.join(__dirname, '..', 'uploadFiles')))
+app.use(koaStatic(path.join(__dirname, '..', 'swagger')))
 
 // logger
 app.use(async (ctx, next) => {
@@ -66,7 +53,7 @@ app.use(async (ctx, next) => {
     console.log(`${ctx.method} ${ctx.url} - $ms`)
 })
 
-// app.use(swagger.routes(), swagger.allowedMethods())
+app.use(swagger.routes(), swagger.allowedMethods())
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
 
