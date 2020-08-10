@@ -2,9 +2,6 @@ const router = require("koa-router")();
 const jwt = require('jsonwebtoken');
 const { getUserC, register, deleteUserC, updateUserC } = require("../controller/user")
 
-/**
- * @swagger 666
-*/
 router.post("/login", async (ctx) => {  //登录
     const { username, password } = ctx.request.body;
     const data = {
@@ -37,13 +34,13 @@ router.post("/user", async (ctx) => { // 注册
     ctx.body = result;
 })
 
-router.delete("/user", async (ctx) => { // 注册
+router.delete("/user", async (ctx) => { // 删除接口
     const { id } = ctx.request.body;
     const result = await deleteUserC(id)
     ctx.body = result;
 })
 
-router.patch("/user", async (ctx) => { // 注册
+router.patch("/user", async (ctx) => { // 修改用户信息
     const result = await updateUserC(ctx.request.body)
     ctx.body = result;
 })

@@ -11,7 +11,7 @@ const swaggerDefinition = {
 };
 const options = {
     swaggerDefinition,
-    apis: ['../src/routes/*.js'], // 写有注解的router的存放地址
+    apis: ['./routes/*.js'], // 写有注解的router的存放地址
 };
 const swaggerSpec = swaggerJSDoc(options)
 // 通过路由获取生成的注解文件
