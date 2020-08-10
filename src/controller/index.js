@@ -3,7 +3,7 @@ const fse = require("fs-extra");
 const { SuccessModel, ErrorModel } = require("../model/resModel")
 
 // 存储目录
-const DIST_FOLDER_PATH = path.join(__dirname, '..', 'uploadFiles')
+const DIST_FOLDER_PATH = path.join(__dirname, '../../', 'uploadFiles')
 // 文件最大体积 1M
 const MIX_SIZE = 1024 * 1024 * 1024
 
