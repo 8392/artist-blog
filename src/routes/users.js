@@ -2,9 +2,7 @@ const router = require("koa-router")();
 const jwt = require('jsonwebtoken');
 const { getUserC, register, deleteUserC, updateUserC } = require("../controller/user")
 
-/**
- * @swagger 666
-*/
+
 router.post("/login", async (ctx) => {  //登录
     const { username, password } = ctx.request.body;
     const data = {

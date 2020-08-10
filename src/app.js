@@ -17,6 +17,7 @@ const swagger = require("../swagger/swagger")
 const config = require('./config')
 const index = require('./routes/index')
 const users = require('./routes/users')
+const blogs = require('./routes/blog')
 
 const port = process.env.PORT || config.port
 
@@ -41,7 +42,7 @@ app.use(koaSwagger({
 app.use(bodyparser())
     .use(json())
     .use(logger())
-    .use(require('koa-static')(__dirname + '/public'))
+    .use(koaStatic(__dirname + '/public'))
 
 app.use(koaStatic(path.join(__dirname, '..', 'uploadFiles')))
 app.use(koaStatic(path.join(__dirname, '..', 'swagger')))
@@ -57,6 +58,7 @@ app.use(async (ctx, next) => {
 app.use(swagger.routes(), swagger.allowedMethods())
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
+app.use(blogs.routes(), blogs.allowedMethods())
 
 
 app.on('error', function (err, ctx) {

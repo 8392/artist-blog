@@ -1,7 +1,10 @@
 const seq = require("./seq");
 
 
-require('./model/User')
+// require('./model/User');
+// require('./model/Blog');
+
+require("./model")
 
 
 
