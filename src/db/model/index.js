@@ -1,7 +1,7 @@
 const Blog = require("./Blog");
 const User = require("./User");
 
-User.belongsTo(User, {
+Blog.belongsTo(User, {
     foreignkey: 'userId'
 })
 

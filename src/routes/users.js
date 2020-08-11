@@ -10,7 +10,7 @@ router.post("/login", async (ctx) => {  //登录
     }
     resData = jwt.sign({
         data,
-    }, 'ArtistXB', { expiresIn: 60 * 60 });
+    }, 'ArtistXB', { expiresIn: 60 * 60 }); d
 
     ctx.body = {
         code: 0,
