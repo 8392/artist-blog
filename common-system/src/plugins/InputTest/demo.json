@@ -1,0 +1,30 @@
+{
+  "web_img_url": "/index.png",
+  "app_img_url": "/index.png",
+  "web_template_url": "/index.js",
+  "app_template_url": "/index.js",
+  "props": [
+    {
+      "hide": true,
+      "key": "subPage",
+      "asyncPage": true,
+      "value": "SubComp.vue",
+      "label": "按钮权限",
+      "desc": "配置按钮权限字段",
+      "type": "String"
+    },
+    {
+      "key": "userName",
+      "label": "你的名字是：",
+      "desc": "你的名字是：",
+      "required": true
+    },
+    {
+      "key": "desc",
+      "value": "",
+      "label": "个人简介：",
+      "desc": "个人简介：",
+      "required": true
+    }
+  ]
+}

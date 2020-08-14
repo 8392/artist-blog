@@ -1,0 +1,28 @@
+{
+  "name": "input-test",
+  "title": "输入测试插件",
+  "description": "插件描述, -- 输入测试插件,你输入什么就显示什么",
+  "category": "输入类",
+  "version-description": "版本说明 - demo插件演示功能初始版本",
+  "version": "1.0",
+  "terminal": ["app", "web"],
+  "app_img_url": "/index.png",
+  "app_template_url": "/index.js",
+  "web_img_url": "/index.png",
+  "web_template_url": "/index.js",
+  "props": [
+    {
+      "key": "userName",
+      "label": "你的名字是：",
+      "desc": "你的名字是：",
+      "required": true
+    },
+    {
+      "key": "desc",
+      "value": "",
+      "label": "个人简介：",
+      "desc": "个人简介：",
+      "required": true
+    }
+  ]
+}

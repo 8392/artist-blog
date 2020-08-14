@@ -1,0 +1,21 @@
+{
+  "web_img_url": "/index.png",
+  "app_img_url": "/index.png",
+  "web_template_url": "/index.js",
+  "app_template_url": "/index.js",
+  "props": [
+    {
+      "key": "userName",
+      "label": "你的xxxx名字是：",
+      "desc": "你的名字是：",
+      "required": true
+    },
+    {
+      "key": "desc",
+      "value": "",
+      "label": "个人简介：",
+      "desc": "个人简介：",
+      "required": true
+    }
+  ]
+}

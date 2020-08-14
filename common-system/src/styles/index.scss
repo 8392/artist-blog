@@ -1,0 +1,92 @@
+@import './reset.css';
+@import "./mixin.scss";
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: PingFangSC-Semibold Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial,
+    sans-serif;
+  box-sizing: border-box;
+}
+
+label {
+  font-weight: 700;
+}
+
+html {
+  box-sizing: border-box;
+  line-height: 1;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+.collapse {
+  &::before {
+    content: '';
+    display: table;
+  }
+}
+
+// main-container global css
+.app-container {
+  padding: 20px;
+}
+
+.empty-words {
+  text-indent: -9999px;
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.no-wrap {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.common-pre {
+  white-space: pre-wrap;
+  tab-size: 2;
+}
+
+.common-disabled {
+  cursor: not-allowed;
+}
+
+.ie-no-eyes {
+  input::-ms-clear,
+  input::-ms-reveal {
+    display: none;
+  }
+}
+
+.mw100 {
+  max-width: 100%;
+}

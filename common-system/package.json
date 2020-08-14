@@ -1,0 +1,53 @@
+{
+    "name": "correction",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "plugin": "node ./build/webpack.run.js",
+        "plugin3": "node ./build3/webpack.run.js",
+        "serve": "vue-cli-service serve",
+        "serve:test": "cross-env __ISTEST=YES vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "lint": "vue-cli-service lint",
+        "output": "vue inspect --mode=production > output.js"
+    },
+    "dependencies": {
+        "axios": "^0.19.2",
+        "core-js": "^3.6.5",
+        "echarts": "^4.8.0",
+        "element-ui": "^2.13.2",
+        "nprogress": "^0.2.0",
+        "vue": "^2.6.11",
+        "vue-router": "^3.2.0",
+        "vue-ueditor-wrap": "^2.4.3",
+        "vuex": "^3.4.0"
+    },
+    "devDependencies": {
+        "@vue/cli-plugin-babel": "~4.4.0",
+        "@vue/cli-plugin-eslint": "~4.4.0",
+        "@vue/cli-plugin-router": "~4.4.0",
+        "@vue/cli-plugin-vuex": "~4.4.0",
+        "@vue/cli-service": "~4.4.0",
+        "@vue/eslint-config-standard": "^5.1.2",
+        "babel-eslint": "^10.1.0",
+        "cross-env": "^7.0.2",
+        "eslint": "^6.7.2",
+        "eslint-plugin-import": "^2.20.2",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-promise": "^4.2.1",
+        "eslint-plugin-standard": "^4.0.0",
+        "eslint-plugin-vue": "^6.2.2",
+        "less": "^3.11.3",
+        "less-loader": "^6.1.1",
+        "md5": "^2.2.1",
+        "node-sass": "^4.14.1",
+        "sass": "^1.26.8",
+        "sass-loader": "^8.0.2",
+        "stylus": "^0.54.8",
+        "stylus-loader": "^3.0.2",
+        "svg-sprite-loader": "^5.0.0",
+        "vue-template-compiler": "^2.6.11",
+        "webpack": "^4.41.2",
+        "webpack-cli": "^3.3.10"
+    }
+}

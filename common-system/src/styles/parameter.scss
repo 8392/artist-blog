@@ -1,0 +1,250 @@
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
+
+.system-manage-wrap {
+    .left {
+        float: left;
+    }
+
+    .right {
+        float: right;
+    }
+
+    .flex {
+        display: flex;
+        display: -ms-flexbox;
+    }
+
+    .flex1 {
+        flex: 1;
+        -ms-flex: 1;
+    }
+
+    .line {
+        line-height: 40px;
+    }
+
+    .wid60 {
+        width: 60px;
+    }
+
+    .wid80 {
+        width: 80px;
+    }
+
+    .wid120 {
+        width: 120px;
+    }
+
+    .wid100 {
+        width: 100px;
+    }
+
+    .wid160 {
+        width: 160px;
+    }
+
+    .wid180 {
+        width: 180px;
+    }
+
+    .wid200 {
+        width: 200px;
+    }
+
+    .wid240 {
+        width: 240px;
+    }
+
+    .wid280 {
+        width: 280px;
+    }
+
+    .marginR90 {
+        margin-right: 90px;
+    }
+
+    .marginR40 {
+        margin-right: 40px;
+    }
+
+    .margin10 {
+        margin: 10px 0;
+    }
+
+    .marginL35 {
+        margin-left: 35px;
+    }
+
+    .marginL55 {
+        margin-left: 55px;
+    }
+
+    .marginL77 {
+        margin-left: 77px;
+    }
+
+    .marginL90 {
+        margin-left: 90px;
+    }
+
+    .marginL100 {
+        margin-left: 100px;
+    }
+
+    .marginL170 {
+        margin-left: 170px;
+    }
+
+    .marginT20 {
+        margin-top: 20px;
+    }
+
+    .c-box {
+        border: 1px solid rgb(229, 229, 229);
+        border-radius: 4px;
+        margin-top: 15px;
+        overflow: hidden;
+
+        .c-box-title {
+            height: 60px;
+            line-height: 60px;
+            box-sizing: border-box;
+            padding: 0 20px;
+            background: rgb(248, 249, 252);
+            border-bottom: 1px solid rgb(229, 229, 229);
+            display: flex;
+            justify-content: space-between;
+
+            .name {
+                color: rgb(60, 59, 142);
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+            .control {
+                font-size: 20px;
+                color: #6f6f6f;
+                font-weight: bold;
+                line-height: 60px;
+
+                &:hover {
+                    cursor: pointer;
+                    color: rgb(69, 67, 111);
+                }
+            }
+        }
+
+        .c-box-body {
+            background: white;
+            box-sizing: border-box;
+            padding: 20px 0px;
+
+            .body-items {
+                padding: 5px 20px;
+
+                .item-title {
+                    line-height: 40px;
+                    font-size: 14px;
+                }
+
+                .item-input {
+                    width: 260px;
+                }
+
+                .item-checkbox {
+                    line-height: 40px;
+                    margin: 0 20px;
+                }
+
+                .setting {
+                    font-size: 14px;
+                    color: rgb(88, 86, 214);
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+
+            .body-items-setting {
+                margin-top: 10px;
+            }
+
+            .btn {
+                height: 40px;
+                padding: 0 30px;
+                border-radius: 6px;
+                background: rgb(212, 212, 230);
+                color: #494949;
+                font-weight: 600;
+                margin-right: 20px;
+
+                &:hover {
+                    cursor: pointer;
+                    background: #ddd;
+                    transition: all 0.3s;
+                }
+            }
+
+            .btn-confirm {
+                background: rgb(88, 86, 214);
+                color: white;
+
+                &:hover {
+                    background: #6d6cd2;
+                }
+            }
+
+            .btn-save {
+                margin-top: 20px;
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+
+        .setting-item {
+            background: rgb(237, 239, 244);
+            box-sizing: border-box;
+            padding: 5px 20px;
+
+            .item-left {
+                .setting {
+                    font-size: 14px;
+                    color: rgb(88, 86, 214);
+                    text-decoration: underline;
+                    cursor: pointer;
+                    line-height: 40px;
+                }
+            }
+
+            .item-right {
+                margin-left: 40px;
+
+                .item-right-list {
+                    line-height: 40px;
+
+                    .item-right-list-title {
+                        font-weight: bold;
+                        color: rgb(69, 67, 111);
+                        font-size: 14px;
+                    }
+
+                    .item-title {
+                        line-height: 40px;
+                        font-size: 14px;
+                    }
+
+                    .item-input {
+                        width: 260px;
+                    }
+                }
+            }
+        }
+    }
+}

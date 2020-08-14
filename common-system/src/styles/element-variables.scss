@@ -1,0 +1,19 @@
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+/* 改变主题色变量 */
+$--color-primary: #5856D6;  //主要按钮
+
+
+$--color-success: #15CE73 !default; //成功按钮
+
+$--color-warning: #45436F !default; //警告按钮
+
+$--color-danger: #EF5454 !default; //危险按钮
+
+$--color-info: #909399 !default; //信息按钮
+
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import "~element-ui/packages/theme-chalk/src/index";
